@@ -132,7 +132,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--ink)
   </div>
 </div>
 <div class="panel" id="panel-openended"><h2>자유 서술 응답</h2><div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;"><button class="btn btn-accent" onclick="printOpenEnded()">🖨️ 인쇄/PDF</button><button class="btn btn-green" onclick="exportOpenEndedDoc()">📄 워드 다운로드</button></div><div class="filter-bar"><label>배경 필터:</label><select id="oeFilter" onchange="renderOpenEnded()"><option value="">전체 보기</option></select></div><div id="openEndedList"></div></div>
-<div class="panel" id="panel-coupon"><h2>☕ 쿠폰 발송 관리</h2><p style="font-size:13px;color:var(--ink3);margin-bottom:8px;">카카오톡 선물하기 등으로 쿠폰을 보내신 뒤 "발송 완료"를 눌러주세요.</p><div style="margin-bottom:16px;"><button class="btn btn-green" onclick="exportCouponExcel()">📥 쿠폰 연락처 엑셀 다운로드</button></div><div id="couponList"></div></div>
+<div class="panel" id="panel-coupon"><h2>☕ 쿠폰 발송 관리</h2><p style="font-size:13px;color:var(--ink3);margin-bottom:8px;">설문 조사 종료 후 카카오톡 선물하기 등으로 쿠폰을 일괄 발송하시고, 발송 완료된 항목을 체크해 주세요.</p><div style="margin-bottom:16px;"><button class="btn btn-green" onclick="exportCouponExcel()">📥 쿠폰 연락처 엑셀 다운로드</button></div><div id="couponList"></div></div>
 <div class="panel" id="panel-rawdata"><h2>원시 데이터</h2><div style="margin-bottom:12px;"><button class="btn btn-green" onclick="exportExcel()">📥 전체 데이터 엑셀 다운로드</button></div><div class="table-wrap" id="rawTableWrap"></div></div>
 </div><!-- end dashboardContent -->
 </div>
