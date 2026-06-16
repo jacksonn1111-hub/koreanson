@@ -281,7 +281,7 @@ function renderOverview(){
 }
 
 function renderBackground(){
-  const fields=[{k:'q1_gender',l:'성별'},{k:'q2_age',l:'연령대'},{k:'q3_career',l:'총 교직 경력'},{k:'q4_voc_career',l:'특성화고 경력'},{k:'q6_hours',l:'주당 시수'},{k:'q7_general_exp',l:'일반고/중학교 경험'}];
+  const fields=[{k:'q1_gender',l:'성별'},{k:'q2_age',l:'연령대'},{k:'q3_career',l:'총 교직 경력'},{k:'q4_voc_career',l:'특성화고 경력'},{k:'q8_region',l:'근무 지역'},{k:'q6_hours',l:'주당 시수'},{k:'q7_general_exp',l:'일반고/중학교 경험'}];
   const c=document.getElementById('bgCharts');c.innerHTML='';
   const colors=['#2d5a7b','#4a8ab5','#2e7d5b','#e67e22','#8e44ad','#c0392b','#95a5a6'];
   fields.forEach(f=>{const counts={};allData.forEach(d=>{const v=d[f.k]||'무응답';counts[v]=(counts[v]||0)+1;});const box=document.createElement('div');box.className='chart-box';const id='bg_'+f.k;box.innerHTML=`<div class="chart-title">${f.l} (n=${allData.length})</div><canvas id="${id}"></canvas><div class="chart-stats">${Object.entries(counts).map(([k,v])=>`${k}: ${v}명(${(v/allData.length*100).toFixed(1)}%)`).join(' · ')}</div>`;c.appendChild(box);if(allData.length){dc(id);const labels=Object.keys(counts);CI[id]=new Chart(box.querySelector('canvas'),{type:'doughnut',data:{labels,datasets:[{data:labels.map(l=>counts[l]),backgroundColor:colors.slice(0,labels.length)}]},options:{plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}});}});
